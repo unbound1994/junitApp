@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseUITest {
-    /*Создание driver'a и wait'a*/
     WebDriver driver;
     WebDriverWait wait;
 
