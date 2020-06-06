@@ -1,0 +1,2 @@
+- Финальная версия проекта для тестирования сайта http://automationpractice.com
+- JUnit + Selenium + POM
