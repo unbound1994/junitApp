@@ -5,7 +5,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FillingInTheFields extends BaseActions {
-    private static final By FIRSTNAME_HEADER = By.cssSelector(".navigation_page");
     private static final By FIELD_FIRSTNAME = By.cssSelector("#customer_firstname");
     private static final By FIELD_LASTNAME = By.cssSelector("#customer_lastname");
     private static final By FIELD_PASSWORD = By.cssSelector("#passwd");
@@ -21,16 +20,6 @@ public class FillingInTheFields extends BaseActions {
     private static final By SUBMIT_REGISTRATION = By.cssSelector("#submitAccount");
     private static final By SUBMIT_REGISTRATION_HEADER = By.cssSelector(".navigation_page");
 
-
-    public boolean isAccPageHeaderPresent(){
-        return IsElementPresent(FIRSTNAME_HEADER);
-    }
-
-    public String getAccPageHeaderText(){
-        return driver.findElement(FIRSTNAME_HEADER).getText();
-    }
-
-
     public void generateNewName(){
         String[] names = {"Julia", "Robert", "Cassandra", "Tom", "Olivia"};
         String name = names[(int)(Math.random()*names.length)];
@@ -44,7 +33,6 @@ public class FillingInTheFields extends BaseActions {
         type(lastname, FIELD_LASTNAME);
     }
 
-
     public void generateNewRandomPassword(int passwdLength){
         StringBuilder passwdBuilder = new StringBuilder();
         for (int i = 0; i < passwdLength ; i++) {
@@ -52,7 +40,6 @@ public class FillingInTheFields extends BaseActions {
         }
         type(passwdBuilder.toString(), FIELD_PASSWORD);
     }
-
 
     public void generateNewRandomAddress(){
         String[] street = {"Madison Ave", "Park Ave", "Main Str", "Imperial Highway", "Lennox Boulevard",};
@@ -69,16 +56,13 @@ public class FillingInTheFields extends BaseActions {
             poBoxIndex.append((int)(Math.random()*9));
         }
         type(streets + ", " + states + "-" + poBoxIndex + ", " + company, ADDRESSS_INPUT);
-
     }
-
 
     public void generateCityNames(){
         String[] city = {"Ann Arbor", "Nashville", "Overland Park", "Boston", "Phoenix", "Cleveland", "Salt Lake City", "Toledo", "Fort Worth", "Oklahoma City", "Yonkers"};
         String names = city[(int)(Math.random()*city.length)];
         type(names, CITY);
     }
-
 
     public void chooseCountry(){
         click(COUNTRY_FIELD);
@@ -88,7 +72,6 @@ public class FillingInTheFields extends BaseActions {
         select.selectByVisibleText("United States");
     }
 
-
     public void zipRandomGenerate (int zipNums){
         StringBuilder zipBuilder = new StringBuilder();
         for (int i = 0; i < zipNums; i++) {
@@ -96,7 +79,6 @@ public class FillingInTheFields extends BaseActions {
         }
         type(zipBuilder.toString(), ZIPPOST_CODE);
     }
-
 
     public void selectState(){
         click(STATES_FEILD);
@@ -107,7 +89,6 @@ public class FillingInTheFields extends BaseActions {
         select.selectByIndex(index);
     }
 
-
     public void phoneNumberRandomGeneration(int phoneLength){
         StringBuilder phoneBuilder = new StringBuilder();
         for (int i = 0; i < phoneLength; i++) {
@@ -115,7 +96,6 @@ public class FillingInTheFields extends BaseActions {
         }
         type("+" + phoneBuilder, MOBILE_PHONE);
     }
-
 
     public void setMyAddressInput(){
         String[] street = {"Madison Ave", "Park Ave", "Main Str", "Imperial Highway", "Lennox Boulevard",};

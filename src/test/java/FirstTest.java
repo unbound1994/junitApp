@@ -7,17 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FirstTest {
-    /*объявление драйвера для последующей работы с ним*/
     WebDriver driver;
 
-    /*перед каждым тестом происходит инициализация драйвера и развертывание окна на весь экран*/
     @BeforeEach
     public void init(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
-    /*тест, открывающий домашнюю страницу по заданному URL при помощи геттера и кликающий по кнопке SignIn*/
     @Test
     public void openPage(){
         driver.get("http://automationpractice.com/");
@@ -27,7 +24,7 @@ public class FirstTest {
 
     /**/
     @AfterEach
-        public void shutdown(){
-            driver.quit();
-        }
+    public void shutdown() {
+        driver.quit();
+    }
 }

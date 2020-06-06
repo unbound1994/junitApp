@@ -9,25 +9,22 @@ public class BaseUITest {
     WebDriver driver;
     WebDriverWait wait;
 
-    /*Необходимые объекты классов гаследников от BaseActions*/
     protected MainPage mainpage;
-    protected SignInPage signInPage;
     protected NewAccountRegistration newAccountRegistration;
     protected FillingInTheFields fillingInTheFields;
+    protected AddToCart addToCart;
 
-    /*Инициализация*/
     @BeforeEach
     public void init(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 3);
         mainpage = new MainPage(driver, wait);
-        signInPage = new SignInPage(driver, wait);
         newAccountRegistration = new NewAccountRegistration(driver, wait);
         fillingInTheFields = new FillingInTheFields(driver, wait);
+        addToCart = new AddToCart(driver, wait);
     }
 
-    /*Завершение работы driver'а*/
     @AfterEach
     public void shutdown(){
         driver.quit();
